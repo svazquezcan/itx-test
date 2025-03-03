@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 const ProductDescription = ({ productDetail, setStorageCode, setColorCode }) => {
   const [openSections, setOpenSections] = useState({
@@ -32,8 +32,8 @@ const ProductDescription = ({ productDetail, setStorageCode, setColorCode }) => 
     allowedKeys.includes(key)
   );
 
-  const colors = productDetail?.options?.colors || [];
-  const storages = productDetail?.options?.storages || [];
+  const colors = useMemo(() => productDetail?.options?.colors || [], [productDetail]);
+  const storages = useMemo(() => productDetail?.options?.storages || [], [productDetail]);
 
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedStorage, setSelectedStorage] = useState("")

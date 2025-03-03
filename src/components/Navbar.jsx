@@ -18,7 +18,7 @@ export const Navbar = () => {
         className={`${
           pathname === "/about" && "text-red-600"
         } hover:text-red-600 transition`}
-        to={"/about"}
+        to={() => null}
       >
         Nosotros
       </Link>
@@ -26,7 +26,7 @@ export const Navbar = () => {
         className={`${
           pathname === "/products" && "text-red-600"
         } hover:text-red-600 transition`}
-        to={"/products"}
+        to={() => null}
       >
         Productos
       </Link>
@@ -34,7 +34,7 @@ export const Navbar = () => {
         className={`${
           pathname === "/contact" && "text-red-600"
         } hover:text-red-600 transition`}
-        to={"/contact"}
+        to={() => null}
       >
         Contáctanos
       </Link>

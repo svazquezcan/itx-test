@@ -27,11 +27,11 @@ export const ProductDetails = () => {
   } 
 
   return (
-    <div className='flex gap-4 justify-center relative'>
+    <div className='flex gap-4 lg:gap-20 justify-center relative'>
         <section className="pt-32 pb-12 lg:py-32 h-screen flex items-center">
             <IoMdArrowBack size={50} className='absolute top-[7rem] left-0 cursor-pointer fixed' onClick={() => navigate('/')}/>
             <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row items-center">
+                <div className="flex flex-col items-center">
                     <div className="flex flex-1 justify-center items-center mb-8 lg:mb-0">
                         <img
                             className="max-w-[200px] lg:max-w-sm"
@@ -39,7 +39,7 @@ export const ProductDetails = () => {
                             alt={model}
                         />
                     </div>
-                    <div className="flex-1 text-center lg:text-left">
+                    <div className="flex-1 text-center mt-4">
                         <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
                             {`${brand}: ${model}`}
                         </h1>
