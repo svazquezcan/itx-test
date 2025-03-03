@@ -11,7 +11,7 @@ const CartProvider = ({ children }) => {
   const [itemAmount, setItemAmount] = useState(0);
   const [total, setTotal] = useState(0);
 
-  const updateCartOnServer = async (updatedCart) => {
+  const updateCartOnServer = async (updatedCartItem) => {
     const endpointDomain = process.env.REACT_APP_ENDPOINT_DOMAIN
   
     try {
@@ -20,7 +20,7 @@ const CartProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedCart),
+        body: JSON.stringify(updatedCartItem),
       });
     } catch (error) {
       console.error("Error updating cart:", error);
@@ -71,14 +71,22 @@ const CartProvider = ({ children }) => {
       newCart = ([...cart, newItem]);
     }
     setCart(newCart)
-    updateCartOnServer(newCart)
+
+    const updatedCartItem = {
+        id: id,
+        colorCode: colorCode,
+        storageCode: storageCode,
+    };
+
+    updateCartOnServer(updatedCartItem)
   };
 
   // quitar del carrito
   const removeFromCart = (id, storageCode, colorCode) => {
     const newCart = cart.filter((item) => item.id !== id && item.storageCode !== storageCode && item.colorCode !== colorCode);
     setCart(newCart);
-    updateCartOnServer(newCart)
+
+    //todo remove items from cart api call
   };
 
   // limpiar carrito
