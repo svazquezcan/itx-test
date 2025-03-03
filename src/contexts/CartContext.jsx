@@ -15,7 +15,7 @@ const CartProvider = ({ children }) => {
     const endpointDomain = process.env.REACT_APP_ENDPOINT_DOMAIN
   
     try {
-      await fetch(`${endpointDomain}/api/cart}`, {
+      await fetch(`${endpointDomain}/api/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
