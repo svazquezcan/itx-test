@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { BsEyeFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const Product = ({ product }) => {
   const { id, imgUrl, brand, model, price } = product;
